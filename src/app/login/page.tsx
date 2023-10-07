@@ -24,8 +24,8 @@ const LoginPage = () => {
   const onLogin = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('/api/users/login');
-      console.log('Login Successful', response.data.message);
+      const response = await axios.post('/api/users/login', user);
+      console.log('Login Successful', response.data);
       router.push('/profile');
     } catch (error: any) {
       console.log('Login Failed', error.message);
